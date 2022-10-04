@@ -63,4 +63,32 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(actualResultMessage.getText(), expectedResultMessage);
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
+
+    @Test (priority = 4)
+    public void test4_verifyLoginErrorInvalidPassword() {
+        String expectedResultMessage = "Wrong password";
+        String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
+
+        String email = "admin@admin.com";
+        String password = faker.color().name() + faker.cat().name() + faker.number().digit();
+
+        getDriver().manage().deleteAllCookies();
+
+        homepagePage.getLoginButton().click();
+
+        WebElement attributeEmail = getDriver().findElement(By.id("email"));
+        attributeEmail.sendKeys(email);
+
+        WebElement attributePassword = getDriver().findElement(By.id("password"));
+        attributePassword.sendKeys(password);
+
+        loginPage.getLoginButton().click();
+
+        WebElement errorBox = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div"));
+        Assert.assertTrue(errorBox.isDisplayed());
+
+        WebElement errorMessage = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]/ul/li"));
+        Assert.assertEquals(errorMessage.getText(), expectedResultMessage);
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
+    }
 }
