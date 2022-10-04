@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Homepage extends BasePage{
+public class HomepagePage extends BasePage{
 
     private By homeButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/a[1]");
     private By aboutButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/a[2]");
@@ -14,7 +14,7 @@ public class Homepage extends BasePage{
     private By themeButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/div[1]");
     private By languageButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/button");
 
-    public Homepage(WebDriver driver, WebDriverWait webDriverWait) {
+    public HomepagePage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
 
