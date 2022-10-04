@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,6 +19,7 @@ public abstract class BaseTest {
     private WebDriverWait webDriverWait;
     protected HomepagePage homepagePage;
     protected LoginPage loginPage;
+    protected Faker faker;
 
     @BeforeClass
     public void beforeClass(){
@@ -28,6 +30,7 @@ public abstract class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         homepagePage = new HomepagePage(driver, webDriverWait);
         loginPage = new LoginPage(driver, webDriverWait);
+        faker = new Faker();
     }
 
     public BaseTest() {

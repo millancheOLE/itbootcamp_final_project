@@ -1,9 +1,12 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import javax.swing.plaf.TableHeaderUI;
 
 public class LoginTest extends BaseTest {
 
@@ -31,5 +34,33 @@ public class LoginTest extends BaseTest {
 
         Assert.assertEquals(actualResultEmail, expectedResultEmail);
         Assert.assertEquals(actualResultPassword, expectedResultPassword);
+    }
+
+    @Test (priority = 3)
+    public void test3_verifyLoginErrorInvalidData(){
+        String expectedResultMessage = "User does not exists";
+        String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
+
+        String email = faker.name().firstName() + "." + faker.name().lastName() + "@gmail.com";
+        String password = email + "123@";
+
+        homepagePage.getLoginButton().click();
+
+        WebElement attributeEmail = getDriver().findElement(By.id("email"));
+        attributeEmail.sendKeys(email);
+
+        WebElement attributePassword = getDriver().findElement(By.id("password"));
+        attributePassword.sendKeys(password);
+
+        loginPage.getLoginButton().click();
+
+        WebElement errorBox = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div"));
+
+        Assert.assertTrue(errorBox.isDisplayed());
+
+        WebElement actualResultMessage = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]/ul"));
+
+        Assert.assertEquals(actualResultMessage.getText(), expectedResultMessage);
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 }
