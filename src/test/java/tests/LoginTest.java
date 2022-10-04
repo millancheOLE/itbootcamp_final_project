@@ -5,9 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
-public class HomepagePageTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
     @Test (priority = 1)
     public void test1_verifyLoginURL(){
