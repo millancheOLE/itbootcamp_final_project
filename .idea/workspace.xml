@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 6th Commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/SignUpPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SignUpTest.java" afterDir="false" />
+    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 7th Commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AdminCitiesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +39,8 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/milla/IdeaProjects/itbootcamp_final_project&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.SignUpTest.test4_verifyValidSignUp">
-    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.AdminCitiesTest">
+    <configuration name="AdminCitiesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
         <pattern>
@@ -51,8 +49,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminCitiesTest.test1_verifyCitiesURL" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="itbootcamp_final_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
+      <option name="METHOD_NAME" value="test1_verifyCitiesURL" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -70,24 +86,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.SignUpTest" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignUpTest.test1_verifySignUpURL" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="itbootcamp_final_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SignUpTest" />
-      <option name="METHOD_NAME" value="test1_verifySignUpURL" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -132,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.AdminCitiesTest" />
+        <item itemvalue="TestNG.AdminCitiesTest.test1_verifyCitiesURL" />
         <item itemvalue="TestNG.SignUpTest.test4_verifyValidSignUp" />
         <item itemvalue="TestNG.SignUpTest.test3_verifyUserCantSignupWithRegistredEmail" />
         <item itemvalue="TestNG.SignUpTest" />
-        <item itemvalue="TestNG.SignUpTest.test1_verifySignUpURL" />
-        <item itemvalue="TestNG.LoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664978892564</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Final Project: Selenium and TestNG - 7th Commit">
+      <created>1665002174423</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665002174423</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +218,7 @@
     <MESSAGE value="Final Project: Selenium and TestNG - 4th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 5th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 6th Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 6th Commit" />
+    <MESSAGE value="Final Project: Selenium and TestNG - 7th Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 7th Commit" />
   </component>
 </project>
