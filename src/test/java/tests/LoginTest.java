@@ -3,10 +3,14 @@ package tests;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import javax.swing.plaf.TableHeaderUI;
+import java.time.Duration;
 
 public class LoginTest extends BaseTest {
 
@@ -90,5 +94,28 @@ public class LoginTest extends BaseTest {
         WebElement errorMessage = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]/ul/li"));
         Assert.assertEquals(errorMessage.getText(), expectedResultMessage);
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
+    }
+
+    @Test
+    public void test5_verifyLoginValidData(){
+        String expectedResult = "https://vue-demo.daniel-avellaneda.com/home";
+
+        String email = "admin@admin.com";
+        String password = "12345";
+
+        getDriver().manage().deleteAllCookies();
+
+        homepagePage.getLoginButton().click();
+
+        WebElement attributeEmail = getDriver().findElement(By.id("email"));
+        attributeEmail.sendKeys(email);
+
+        WebElement attributePassword = getDriver().findElement(By.id("password"));
+        attributePassword.sendKeys(password);
+
+        loginPage.getLoginButton().click();
+        getWebDriverWait().until(ExpectedConditions.urlMatches(expectedResult));
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 }

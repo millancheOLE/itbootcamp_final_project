@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomepagePage;
 import pages.LoginPage;
-
 import java.time.Duration;
 
 public abstract class BaseTest {
@@ -28,6 +27,7 @@ public abstract class BaseTest {
         driver.get("https://vue-demo.daniel-avellaneda.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         homepagePage = new HomepagePage(driver, webDriverWait);
         loginPage = new LoginPage(driver, webDriverWait);
         faker = new Faker();
