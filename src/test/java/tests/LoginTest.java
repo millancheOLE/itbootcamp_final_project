@@ -1,16 +1,10 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.swing.plaf.TableHeaderUI;
-import java.time.Duration;
 
 public class LoginTest extends BaseTest {
 
@@ -121,7 +115,6 @@ public class LoginTest extends BaseTest {
 
     @Test (priority = 6)
     public void test6_verifyLogout(){
-        test5_verifyLoginValidData();
 
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
         String setURL = "https://vue-demo.daniel-avellaneda.com/home";
