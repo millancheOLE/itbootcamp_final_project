@@ -96,7 +96,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 
-    @Test
+    @Test (priority = 5)
     public void test5_verifyLoginValidData(){
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/home";
 
@@ -117,5 +117,22 @@ public class LoginTest extends BaseTest {
         getWebDriverWait().until(ExpectedConditions.urlMatches(expectedResult));
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
+    }
+
+    @Test (priority = 6)
+    public void test6_verifyLogout(){
+        test5_verifyLoginValidData();
+
+        String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
+        String setURL = "https://vue-demo.daniel-avellaneda.com/home";
+
+        WebElement logoutButton = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[2]"));
+        Assert.assertTrue(logoutButton.isDisplayed());
+        logoutButton.click();
+
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
+
+        getDriver().get(setURL);
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 }
