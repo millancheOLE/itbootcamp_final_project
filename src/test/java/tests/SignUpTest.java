@@ -12,9 +12,8 @@ public class SignUpTest extends BaseTest{
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/signup";
 
         homepagePage.getSignupButton().click();
-        String actualResult = getDriver().getCurrentUrl();
 
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
     @Test (priority = 2)
@@ -26,15 +25,10 @@ public class SignUpTest extends BaseTest{
 
         homepagePage.getSignupButton().click();
 
-        String actualResultName = signUpPage.getNameField().getAttribute("type");
-        String actualResultEmail = signUpPage.getEmailField().getAttribute("type");
-        String actualResultPassword = signUpPage.getPasswordField().getAttribute("type");
-        String actualResultConfirmPassword = signUpPage.getConfirmPasswordField().getAttribute("type");
-
-        Assert.assertEquals(actualResultName, expectedResultName);
-        Assert.assertEquals(actualResultEmail, expectedResultEmail);
-        Assert.assertEquals(actualResultPassword, expectedResultPassword);
-        Assert.assertEquals(actualResultConfirmPassword, expectedResultConfirmPassword);
+        Assert.assertEquals(signUpPage.getNameField().getAttribute("type"), expectedResultName);
+        Assert.assertEquals(signUpPage.getEmailField().getAttribute("type"), expectedResultEmail);
+        Assert.assertEquals(signUpPage.getPasswordField().getAttribute("type"), expectedResultPassword);
+        Assert.assertEquals(signUpPage.getConfirmPasswordField().getAttribute("type"), expectedResultConfirmPassword);
     }
 
     @Test (priority = 3)
