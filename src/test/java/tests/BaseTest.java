@@ -5,10 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import pages.AdminCitiesPage;
 import pages.HomepagePage;
 import pages.LoginPage;
 import java.time.Duration;
@@ -20,6 +22,7 @@ public abstract class BaseTest {
     private WebDriverWait webDriverWait;
     protected HomepagePage homepagePage;
     protected LoginPage loginPage;
+    protected AdminCitiesPage adminCitiesPage;
     protected Faker faker;
 
     @BeforeClass
@@ -32,6 +35,7 @@ public abstract class BaseTest {
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         homepagePage = new HomepagePage(driver, webDriverWait);
         loginPage = new LoginPage(driver, webDriverWait);
+        adminCitiesPage = new AdminCitiesPage(driver, webDriverWait);
         faker = new Faker();
     }
 
@@ -71,6 +75,16 @@ public abstract class BaseTest {
         attributePassword.sendKeys(password);
 
         loginPage.getLoginButton().click();
+    }
+
+    public void navigateToAdminCities() {
+        Actions action = new Actions(getDriver());
+
+        WebElement adminCategory = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[1]"));
+        action.moveToElement(adminCategory).click().build().perform();
+
+        WebElement citiesItem = getDriver().findElement(By.className("btnAdminCities"));
+        action.moveToElement(citiesItem).click().build().perform();
     }
 
 }
