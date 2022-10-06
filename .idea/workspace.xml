@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 7th Commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AdminCitiesTest.java" afterDir="false" />
+    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 8th Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AdminCitiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AdminCitiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SignUpTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +41,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/milla/IdeaProjects/itbootcamp_final_project&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.AdminCitiesTest">
+  <component name="RunManager" selected="TestNG.AdminCitiesTest.test2_createNewCity">
     <configuration name="AdminCitiesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
@@ -75,7 +77,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUpTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminCitiesTest.test2_createNewCity" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +86,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SignUpTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
+      <option name="METHOD_NAME" value="test2_createNewCity" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -130,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AdminCitiesTest" />
+        <item itemvalue="TestNG.AdminCitiesTest.test2_createNewCity" />
         <item itemvalue="TestNG.AdminCitiesTest.test1_verifyCitiesURL" />
+        <item itemvalue="TestNG.AdminCitiesTest" />
         <item itemvalue="TestNG.SignUpTest.test4_verifyValidSignUp" />
         <item itemvalue="TestNG.SignUpTest.test3_verifyUserCantSignupWithRegistredEmail" />
-        <item itemvalue="TestNG.SignUpTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665002174423</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Final Project: Selenium and TestNG - 8th Commit">
+      <created>1665006140298</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665006140298</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +229,7 @@
     <MESSAGE value="Final Project: Selenium and TestNG - 5th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 6th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 7th Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 7th Commit" />
+    <MESSAGE value="Final Project: Selenium and TestNG - 8th Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 8th Commit" />
   </component>
 </project>

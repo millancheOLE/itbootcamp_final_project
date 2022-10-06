@@ -122,4 +122,6 @@ public class SignUpTest extends BaseTest{
 
         Assert.assertEquals(actualResult.getText(), expectedResult);
     }
+
+
 }
