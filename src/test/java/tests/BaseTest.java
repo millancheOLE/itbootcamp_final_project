@@ -1,7 +1,9 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -52,6 +54,23 @@ public abstract class BaseTest {
     @AfterClass
     public void afterClass(){
         driver.quit();
+    }
+
+    public void validLogin(){
+        String email = "admin@admin.com";
+        String password = "12345";
+
+        getDriver().manage().deleteAllCookies();
+
+        homepagePage.getLoginButton().click();
+
+        WebElement attributeEmail = getDriver().findElement(By.id("email"));
+        attributeEmail.sendKeys(email);
+
+        WebElement attributePassword = getDriver().findElement(By.id("password"));
+        attributePassword.sendKeys(password);
+
+        loginPage.getLoginButton().click();
     }
 
 }
