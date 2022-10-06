@@ -1,7 +1,5 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,9 +11,8 @@ public class LoginTest extends BaseTest {
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
 
         homepagePage.getLoginButton().click();
-        String actualResult = getDriver().getCurrentUrl();
 
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
     @Test (priority = 2)
@@ -25,13 +22,8 @@ public class LoginTest extends BaseTest {
 
         homepagePage.getLoginButton().click();
 
-        WebElement attributeEmail = getDriver().findElement(By.id("email"));
-        String actualResultEmail = attributeEmail.getAttribute("type");
-        WebElement attributePassword = getDriver().findElement(By.id("password"));
-        String actualResultPassword = attributePassword.getAttribute("type");
-
-        Assert.assertEquals(actualResultEmail, expectedResultEmail);
-        Assert.assertEquals(actualResultPassword, expectedResultPassword);
+        Assert.assertEquals(loginPage.getEmailInputField().getAttribute("type"), expectedResultEmail);
+        Assert.assertEquals(loginPage.getPasswordInputField().getAttribute("type"), expectedResultPassword);
     }
 
     @Test (priority = 3)
@@ -39,26 +31,12 @@ public class LoginTest extends BaseTest {
         String expectedResultMessage = "User does not exists";
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
 
-        String email = faker.name().firstName() + "." + faker.name().lastName() + "@gmail.com";
-        String password = email + "123@";
-
         homepagePage.getLoginButton().click();
-
-        WebElement attributeEmail = getDriver().findElement(By.id("email"));
-        attributeEmail.sendKeys(email);
-
-        WebElement attributePassword = getDriver().findElement(By.id("password"));
-        attributePassword.sendKeys(password);
-
+        loginPage.createFakerCredentialsRandom();
         loginPage.getLoginButton().click();
 
-        WebElement errorBox = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div"));
-
-        Assert.assertTrue(errorBox.isDisplayed());
-
-        WebElement actualResultMessage = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]/ul"));
-
-        Assert.assertEquals(actualResultMessage.getText(), expectedResultMessage);
+        Assert.assertTrue(loginPage.getErrorMessage().isDisplayed());
+        Assert.assertEquals(loginPage.getErrorMessageText().getText(), expectedResultMessage);
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 
@@ -67,26 +45,12 @@ public class LoginTest extends BaseTest {
         String expectedResultMessage = "Wrong password";
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
 
-        String email = "admin@admin.com";
-        String password = faker.color().name() + faker.cat().name() + faker.number().digit();
-
-        getDriver().manage().deleteAllCookies();
-
         homepagePage.getLoginButton().click();
-
-        WebElement attributeEmail = getDriver().findElement(By.id("email"));
-        attributeEmail.sendKeys(email);
-
-        WebElement attributePassword = getDriver().findElement(By.id("password"));
-        attributePassword.sendKeys(password);
-
+        loginPage.createFakerCredentialsWrongPassword();
         loginPage.getLoginButton().click();
 
-        WebElement errorBox = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div"));
-        Assert.assertTrue(errorBox.isDisplayed());
-
-        WebElement errorMessage = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]/ul/li"));
-        Assert.assertEquals(errorMessage.getText(), expectedResultMessage);
+        Assert.assertTrue(loginPage.getErrorMessage().isDisplayed());
+        Assert.assertEquals(loginPage.getErrorMessageText().getText(), expectedResultMessage);
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 
@@ -94,34 +58,23 @@ public class LoginTest extends BaseTest {
     public void test5_verifyLoginValidData(){
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/home";
 
-        String email = "admin@admin.com";
-        String password = "12345";
-
-        getDriver().manage().deleteAllCookies();
-
         homepagePage.getLoginButton().click();
-
-        WebElement attributeEmail = getDriver().findElement(By.id("email"));
-        attributeEmail.sendKeys(email);
-
-        WebElement attributePassword = getDriver().findElement(By.id("password"));
-        attributePassword.sendKeys(password);
-
+        loginPage.validAdminLogin();
         loginPage.getLoginButton().click();
+
         getWebDriverWait().until(ExpectedConditions.urlMatches(expectedResult));
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
-    @Test (priority = 6)
+    @Test (priority = 6, dependsOnMethods = "test5_verifyLoginValidData")
     public void test6_verifyLogout(){
-
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
         String setURL = "https://vue-demo.daniel-avellaneda.com/home";
 
-        WebElement logoutButton = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[2]"));
-        Assert.assertTrue(logoutButton.isDisplayed());
-        logoutButton.click();
+        Assert.assertTrue(loginPage.getLogoutButton().isDisplayed());
+
+        loginPage.getLogoutButton().click();
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
 
