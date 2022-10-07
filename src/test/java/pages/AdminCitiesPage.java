@@ -16,6 +16,8 @@ public class AdminCitiesPage extends BasePage{
     private By saveButton = By.className("btnSave");
     private By saveMessage = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]");
     private By cityName = By.xpath("//*[@id=\"app\"]/div/main/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[2]");
+    private By deleteButton = By.xpath("/html/body/div/div[1]/main/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[1]/div/button[2]");
+    private By deleteButtonWarning = By.xpath("/html/body/div/div[4]/div/div/div[2]/button[2]");
 
     public AdminCitiesPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
@@ -51,6 +53,14 @@ public class AdminCitiesPage extends BasePage{
 
     public WebElement getCityName() {
         return getDriver().findElement(cityName);
+    }
+
+    public WebElement getDeleteButton() {
+        return getDriver().findElement(deleteButton);
+    }
+
+    public WebElement getDeleteButtonWarning() {
+        return getDriver().findElement(deleteButtonWarning);
     }
 
     public void navigateToAdminCities(){

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 12th Commit" />
+    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 13th Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AdminCitiesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AdminCitiesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AdminCitiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AdminCitiesTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +40,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/milla/IdeaProjects/itbootcamp_final_project&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.SignUpTest">
+  <component name="RunManager" selected="TestNG.AdminCitiesTest">
     <configuration name="AdminCitiesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
@@ -54,7 +58,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminCitiesTest.test1_verifyCitiesURL" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminCitiesTest.test4_searchCity" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
         <pattern>
@@ -64,7 +68,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
-      <option name="METHOD_NAME" value="test1_verifyCitiesURL" />
+      <option name="METHOD_NAME" value="test4_searchCity" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -72,7 +76,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminCitiesTest.test2_createNewCity" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminCitiesTest.test5_deleteCity" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
         <pattern>
@@ -82,7 +86,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
-      <option name="METHOD_NAME" value="test2_createNewCity" />
+      <option name="METHOD_NAME" value="test5_deleteCity" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -126,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.AdminCitiesTest" />
+        <item itemvalue="TestNG.AdminCitiesTest.test5_deleteCity" />
+        <item itemvalue="TestNG.AdminCitiesTest.test4_searchCity" />
         <item itemvalue="TestNG.SignUpTest" />
         <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.AdminCitiesTest" />
-        <item itemvalue="TestNG.AdminCitiesTest.test2_createNewCity" />
-        <item itemvalue="TestNG.AdminCitiesTest.test1_verifyCitiesURL" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665090924014</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Final Project: Selenium and TestNG - 13th Commit">
+      <created>1665091444960</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665091444960</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,6 +266,7 @@
     <MESSAGE value="Final Project: Selenium and TestNG - 10th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 11th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 12th Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 12th Commit" />
+    <MESSAGE value="Final Project: Selenium and TestNG - 13th Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 13th Commit" />
   </component>
 </project>
