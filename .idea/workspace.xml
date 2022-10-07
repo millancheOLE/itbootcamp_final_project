@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 15th Commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LocaleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomepagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomepagePage.java" afterDir="false" />
-    </list>
+    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 16th Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -252,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665164211029</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Final Project: Selenium and TestNG - 16th Commit">
+      <created>1665170326664</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665170326664</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,6 +286,7 @@
     <MESSAGE value="Final Project: Selenium and TestNG - 13th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 14th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 15th Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 15th Commit" />
+    <MESSAGE value="Final Project: Selenium and TestNG - 16th Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 16th Commit" />
   </component>
 </project>
