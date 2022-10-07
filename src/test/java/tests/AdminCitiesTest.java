@@ -2,7 +2,6 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,7 +28,10 @@ public class AdminCitiesTest extends BaseTest {
         adminCitiesPage.getNameTextPlaceholder().sendKeys(faker.address().city());
         adminCitiesPage.getSaveButton().click();
 
-        Assert.assertTrue(adminCitiesPage.getSaveMessage().isDisplayed());
+        boolean savedSuccessfullyMessage = getDriver().findElement
+                (By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")).getText().contains("Saved successfully");
+
+        Assert.assertTrue(savedSuccessfullyMessage);
     }
 
     @Test (priority = 3, dependsOnMethods = "test1_verifyCitiesURL")
@@ -40,14 +42,13 @@ public class AdminCitiesTest extends BaseTest {
         adminCitiesPage.getNameTextPlaceholder().sendKeys(adminCitiesPage.getNameTextPlaceholder().getText() + " - edited");
         adminCitiesPage.getSaveButton().click();
 
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        getWebDriverWait().until(ExpectedConditions.textToBe
+                (By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]"), "Saved successfully\nCLOSE"));
 
         Assert.assertTrue(adminCitiesPage.getCityName().getText().contains(" - edited"));
-        Assert.assertTrue(adminCitiesPage.getSaveMessage().isDisplayed());
+        boolean savedSuccessfullyMessage = getDriver().findElement
+                (By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")).getText().contains("Saved successfully");
+        Assert.assertTrue(savedSuccessfullyMessage);
     }
 
     @Test (priority = 4, dependsOnMethods = "test3_verifyEditCreatedCity")
@@ -72,9 +73,11 @@ public class AdminCitiesTest extends BaseTest {
         getWebDriverWait().until(ExpectedConditions.attributeContains(By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[2]/button[2]"), "type", "button"));
         adminCitiesPage.getDeleteButtonWarning().click();
 
-        getWebDriverWait().until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]"), "Deleted successfully\nCLOSE"));
+        getWebDriverWait().until(ExpectedConditions.textToBe
+                (By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]"), "Deleted successfully\nCLOSE"));
 
-        boolean deletedSuccessfullyMessage = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")).getText().contains("Deleted successfully");
+        boolean deletedSuccessfullyMessage = getDriver().findElement
+                (By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[3]/div/div/div/div/div[1]")).getText().contains("Deleted successfully");
 
         Assert.assertTrue(deletedSuccessfullyMessage);
     }
