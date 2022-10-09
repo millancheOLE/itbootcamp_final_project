@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 16th Commit">
+    <list default="true" id="642ff724-2da5-439e-9d51-379ed561e6d2" name="Changes" comment="Final Project: Selenium and TestNG - 17th Commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/MyProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ProfileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomepagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomepagePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LocaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LocaleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/milla/IdeaProjects/itbootcamp_final_project&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.LocaleTest">
+  <component name="RunManager" selected="TestNG.ProfileTest.test1_createProfile">
     <configuration name="AdminCitiesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
@@ -52,24 +54,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdminCitiesTest.test5_deleteCity" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="itbootcamp_final_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AdminCitiesTest" />
-      <option name="METHOD_NAME" value="test5_deleteCity" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -128,13 +112,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProfileTest.test1_createProfile" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="itbootcamp_final_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProfileTest" />
+      <option name="METHOD_NAME" value="test1_createProfile" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProfileTest.test1_createProfile" />
         <item itemvalue="TestNG.LocaleTest" />
         <item itemvalue="TestNG.LocaleTest.test1_verifySetLanguageToES" />
         <item itemvalue="TestNG.AuthRoutesTests" />
         <item itemvalue="TestNG.AdminCitiesTest" />
-        <item itemvalue="TestNG.AdminCitiesTest.test5_deleteCity" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665170372344</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Final Project: Selenium and TestNG - 17th Commit">
+      <created>1665174198535</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1665174198535</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,6 +307,7 @@
     <MESSAGE value="Final Project: Selenium and TestNG - 14th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 15th Commit" />
     <MESSAGE value="Final Project: Selenium and TestNG - 16th Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 16th Commit" />
+    <MESSAGE value="Final Project: Selenium and TestNG - 17th Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Project: Selenium and TestNG - 17th Commit" />
   </component>
 </project>
