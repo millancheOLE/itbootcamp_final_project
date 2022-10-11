@@ -3,10 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomepagePage extends BasePage{
@@ -52,6 +49,7 @@ public class HomepagePage extends BasePage{
         for (int i = 0; i < languageList.size(); i++) {
             if (languageList.get(i).getText().contains(languageID.toUpperCase())) {
                 languageList.get(i).click();
+                break;
             }
         }
     }

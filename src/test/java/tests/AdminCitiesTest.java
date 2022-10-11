@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 public class AdminCitiesTest extends BaseTest {
 
-    @Test (priority = 1)
-    public void test1_verifyCitiesURL(){
+    @Test
+    public void verifyCitiesURL(){
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/admin/cities";
 
         homepagePage.getLoginButton().click();
@@ -21,8 +21,8 @@ public class AdminCitiesTest extends BaseTest {
         Assert.assertTrue(adminCitiesPage.getLogoutButton().isDisplayed());
     }
 
-    @Test (priority = 2, dependsOnMethods = "test1_verifyCitiesURL")
-    public void test2_verifyCreateNewCity(){
+    @Test (dependsOnMethods = "verifyCitiesURL")
+    public void verifyCreateNewCity(){
         adminCitiesPage.navigateToAdminCities();
         adminCitiesPage.getNewItemButton().click();
         adminCitiesPage.getNameTextPlaceholder().sendKeys(faker.address().city());
@@ -34,8 +34,8 @@ public class AdminCitiesTest extends BaseTest {
         Assert.assertTrue(savedSuccessfullyMessage);
     }
 
-    @Test (priority = 3, dependsOnMethods = "test1_verifyCitiesURL")
-    public void test3_verifyEditCreatedCity(){
+    @Test (dependsOnMethods = "verifyCitiesURL")
+    public void verifyEditCreatedCity(){
         adminCitiesPage.navigateToAdminCities();
         adminCitiesPage.getEditButton().click();
 
@@ -51,8 +51,8 @@ public class AdminCitiesTest extends BaseTest {
         Assert.assertTrue(savedSuccessfullyMessage);
     }
 
-    @Test (priority = 4, dependsOnMethods = "test3_verifyEditCreatedCity")
-    public void test4_verifySearchCity(){
+    @Test (dependsOnMethods = "verifyEditCreatedCity")
+    public void verifySearchCity(){
         adminCitiesPage.navigateToAdminCities();
         adminCitiesPage.getSearchBar().sendKeys(adminCitiesPage.getCityName().getText());
         adminCitiesPage.getSearchBar().sendKeys(Keys.ENTER);
@@ -60,8 +60,8 @@ public class AdminCitiesTest extends BaseTest {
         Assert.assertTrue(adminCitiesPage.getCityName().getText().contains(" - edited"));
     }
 
-    @Test (priority = 5, dependsOnMethods = "test1_verifyCitiesURL")
-    public void test5_verifyDeleteCity() {
+    @Test (dependsOnMethods = "verifyCitiesURL")
+    public void verifyDeleteCity() {
 
         adminCitiesPage.navigateToAdminCities();
         adminCitiesPage.getSearchBar().sendKeys(adminCitiesPage.getCityName().getText());

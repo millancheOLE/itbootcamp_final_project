@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 public class AuthRoutesTests extends BaseTest{
 
-    @Test (priority = 1)
-    public void test1_verifyHomeIsInaccessibleWithoutLogin() {
+    @Test
+    public void verifyHomeIsInaccessibleWithoutLogin() {
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
         String URL = "https://vue-demo.daniel-avellaneda.com/home";
 
@@ -15,8 +15,8 @@ public class AuthRoutesTests extends BaseTest{
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
-    @Test (priority = 2)
-    public void test2_verifyProfileIsInaccessibleWithoutLogin() {
+    @Test
+    public void verifyProfileIsInaccessibleWithoutLogin() {
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
         String URL = "https://vue-demo.daniel-avellaneda.com/profile";
 
@@ -25,8 +25,8 @@ public class AuthRoutesTests extends BaseTest{
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
-    @Test (priority = 3)
-    public void test3_verifyAdminCitiesIsInaccessibleWithoutLogin() {
+    @Test
+    public void verifyAdminCitiesIsInaccessibleWithoutLogin() {
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
         String URL = "https://vue-demo.daniel-avellaneda.com/admin/cities";
 
@@ -35,8 +35,8 @@ public class AuthRoutesTests extends BaseTest{
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
-    @Test (priority = 4)
-    public void test4_verifyAdminUsersIsInaccessibleWithoutLogin() {
+    @Test
+    public void verifyAdminUsersIsInaccessibleWithoutLogin() {
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
         String URL = "https://vue-demo.daniel-avellaneda.com/admin/users";
 

@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test (priority = 1)
-    public void test1_verifyLoginURL(){
+    @Test
+    public void verifyLoginURL(){
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
 
         homepagePage.getLoginButton().click();
@@ -15,8 +15,8 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
-    @Test (priority = 2)
-    public void test2_verifyInputFieldValues(){
+    @Test
+    public void verifyInputFieldValues(){
         String expectedResultEmail = "email";
         String expectedResultPassword = "password";
 
@@ -26,8 +26,8 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getPasswordInputField().getAttribute("type"), expectedResultPassword);
     }
 
-    @Test (priority = 3)
-    public void test3_verifyLoginErrorInvalidData(){
+    @Test
+    public void verifyLoginErrorInvalidData(){
         String expectedResultMessage = "User does not exists";
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
 
@@ -40,8 +40,8 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 
-    @Test (priority = 4)
-    public void test4_verifyLoginErrorInvalidPassword() {
+    @Test
+    public void verifyLoginErrorInvalidPassword() {
         String expectedResultMessage = "Wrong password";
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
 
@@ -54,8 +54,8 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 
-    @Test (priority = 5)
-    public void test5_verifyLoginValidData(){
+    @Test
+    public void verifyLoginValidData(){
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/home";
 
         homepagePage.getLoginButton().click();
@@ -65,16 +65,22 @@ public class LoginTest extends BaseTest {
         getWebDriverWait().until(ExpectedConditions.urlMatches(expectedResult));
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
+
+        loginPage.logoutFromPage();
     }
 
-    @Test (priority = 6, dependsOnMethods = "test5_verifyLoginValidData")
-    public void test6_verifyLogout(){
+    @Test (dependsOnMethods = "verifyLoginValidData")
+    public void verifyLogout(){
+        homepagePage.getLoginButton().click();
+        loginPage.validAdminLogin();
+        loginPage.getLoginButton().click();
+
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/login";
         String setURL = "https://vue-demo.daniel-avellaneda.com/home";
 
         Assert.assertTrue(loginPage.getLogoutButton().isDisplayed());
 
-        loginPage.getLogoutButton().click();
+        loginPage.logoutFromPage();
 
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
 

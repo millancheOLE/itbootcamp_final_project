@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 
 public class LocaleTest extends BaseTest{
 
-    @Test(priority = 1)
-    public void test1_verifySetLanguageToES(){
+    @Test
+    public void verifySetLanguageToES(){
         String expectedResult = "Página de aterrizaje";
 
         homepagePage.getLanguageButton().click();
@@ -22,8 +22,8 @@ public class LocaleTest extends BaseTest{
         Assert.assertEquals(actualResult, expectedResult);
     }
 
-    @Test(priority = 2)
-    public void test2_verifySetLanguageToEN(){
+    @Test
+    public void verifySetLanguageToEN(){
         String expectedResult = "Landing";
 
         homepagePage.getLanguageButton().click();
@@ -37,8 +37,8 @@ public class LocaleTest extends BaseTest{
         Assert.assertEquals(actualResult, expectedResult);
     }
 
-    @Test(priority = 3)
-    public void test3_verifySetLanguageToFR(){
+    @Test
+    public void verifySetLanguageToFR(){
         String expectedResult = "Page d'atterrissage";
 
         homepagePage.getLanguageButton().click();

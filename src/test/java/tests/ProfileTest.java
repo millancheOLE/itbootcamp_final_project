@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 
 public class ProfileTest extends BaseTest{
 
-    @Test (priority = 1)
-    public void test1_createProfile(){
+    @Test
+    public void createProfile(){
 
         homepagePage.getSignupButton().click();
         signUpPage.verifySignUpWithValidCredentials();
@@ -42,9 +42,5 @@ public class ProfileTest extends BaseTest{
         Assert.assertEquals(myProfile.getCountryField().getAttribute("value"), expectedResultCountry);
         Assert.assertEquals(myProfile.getTwitterField().getAttribute("value"), expectedResultTwitter);
         Assert.assertEquals(myProfile.getGitHubField().getAttribute("value"), expectedResultGitHub);
-
-
-
     }
-
 }

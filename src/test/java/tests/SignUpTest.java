@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 
 public class SignUpTest extends BaseTest{
 
-    @Test(priority = 1)
-    public void test1_verifySignUpURL(){
+    @Test
+    public void verifySignUpURL(){
         String expectedResult = "https://vue-demo.daniel-avellaneda.com/signup";
 
         homepagePage.getSignupButton().click();
@@ -16,8 +16,8 @@ public class SignUpTest extends BaseTest{
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResult);
     }
 
-    @Test (priority = 2)
-    public void test2_verifyInputFieldValues(){
+    @Test
+    public void verifyInputFieldValues(){
         String expectedResultName = "text";
         String expectedResultEmail = "email";
         String expectedResultPassword = "password";
@@ -31,8 +31,8 @@ public class SignUpTest extends BaseTest{
         Assert.assertEquals(signUpPage.getConfirmPasswordField().getAttribute("type"), expectedResultConfirmPassword);
     }
 
-    @Test (priority = 3)
-    public void test3_verifyUserCantSignupWithRegistredEmail(){
+    @Test
+    public void verifyUserCantSignupWithRegistredEmail(){
         String expectedResultUserExists = "E-mail already exists";
         String expectedResultURL = "https://vue-demo.daniel-avellaneda.com/signup";
 
@@ -44,8 +44,8 @@ public class SignUpTest extends BaseTest{
         Assert.assertEquals(getDriver().getCurrentUrl(), expectedResultURL);
     }
 
-    @Test (priority = 4)
-    public void test4_verifyValidSignUp(){
+    @Test
+    public void verifyValidSignUp(){
         String expectedResult = "IMPORTANT: Verify your account";
 
         homepagePage.getSignupButton().click();
