@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
-public class HomepagePage extends BasePage{
+public class HomepagePage extends BasePage {
 
     private By homeButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/a[1]");
     private By aboutButton = By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/a[2]");

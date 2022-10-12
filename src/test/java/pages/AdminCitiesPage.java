@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AdminCitiesPage extends BasePage{
+public class AdminCitiesPage extends BasePage {
 
     private By searchBar = By.xpath("//*[@id=\"search\"]");
     private By editButton = By.xpath("//*[@id=\"edit\"]");
@@ -63,7 +63,7 @@ public class AdminCitiesPage extends BasePage{
         return getDriver().findElement(deleteButtonWarning);
     }
 
-    public void navigateToAdminCities(){
+    public void navigateToAdminCities() {
         Actions action = new Actions(getDriver());
 
         WebElement adminCategory = getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[1]"));

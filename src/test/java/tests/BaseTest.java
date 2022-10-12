@@ -1,6 +1,5 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -8,7 +7,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
-
 import java.time.Duration;
 
 public abstract class BaseTest {
@@ -22,10 +20,9 @@ public abstract class BaseTest {
     protected AdminCitiesPage adminCitiesPage;
     protected HomePage home;
     protected MyProfile myProfile;
-    protected Faker faker;
 
     @BeforeClass
-    public void beforeClass(){
+    public void beforeClass() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\milla\\IdeaProjects\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://vue-demo.daniel-avellaneda.com/");
@@ -38,7 +35,6 @@ public abstract class BaseTest {
         adminCitiesPage = new AdminCitiesPage(driver, webDriverWait);
         home = new HomePage(driver, webDriverWait);
         myProfile = new MyProfile(driver, webDriverWait);
-        faker = new Faker();
     }
 
     public BaseTest() {
@@ -53,12 +49,12 @@ public abstract class BaseTest {
     }
 
     @BeforeMethod
-    public void beforeMethod(){
+    public void beforeMethod() {
         driver.get(baseURL);
     }
 
     @AfterClass
-    public void afterClass(){
+    public void afterClass() {
         driver.quit();
     }
 }

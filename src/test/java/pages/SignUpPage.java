@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SignUpPage extends BasePage{
+public class SignUpPage extends BasePage {
 
     private By nameField = By.id("name");
     private By emailField = By.id("email");
@@ -45,31 +45,5 @@ public class SignUpPage extends BasePage{
 
     public WebElement getImportantVerifyAccountMessage() {
         return getDriver().findElement(importantVerifyAccountMessage);
-    }
-
-    public void verifyUserCantSignUpWithRegistredEmail(){
-        String name = faker.name().fullName();
-        String email = "admin@admin.com";
-        String password = faker.dog().name() + faker.number();
-        String confirmPassword = password;
-
-        getNameField().sendKeys(name);
-        getEmailField().sendKeys(email);
-        getPasswordField().sendKeys(password);
-        getConfirmPasswordField().sendKeys(confirmPassword);
-    }
-
-    public void verifySignUpWithValidCredentials(){
-        String firstName = faker.name().firstName();
-        String lastName = faker.name().lastName();
-        String fullName = firstName + " " + lastName;
-        String email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@itbootcamp.rs";
-        String password = faker.number().digits(10);
-        String confirmPassword = password;
-
-        getNameField().sendKeys(fullName);
-        getEmailField().sendKeys(email);
-        getPasswordField().sendKeys(password);
-        getConfirmPasswordField().sendKeys(confirmPassword);
     }
 }

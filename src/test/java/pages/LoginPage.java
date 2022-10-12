@@ -3,10 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     private By emailInputField = By.xpath("//*[@id=\"email\"]");
     private By passwordInputField = By.xpath("//*[@id=\"password\"]");
@@ -48,29 +47,11 @@ public class LoginPage extends BasePage{
         return getDriver().findElement(logoutButton);
     }
 
-    public void logoutFromPage(){
+    public void logoutFromPage() {
         getLogoutButton().click();
     }
 
-    public void createFakerCredentialsRandom() {
-        String email = faker.name().firstName() + "." + faker.name().lastName() + "@gmail.com";
-        String password = email + "123@";
-
-        getEmailInputField().sendKeys(email);
-        getPasswordInputField().sendKeys(password);
-    }
-
-    public void createFakerCredentialsWrongPassword(){
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(loginButton));
-
-        String email = "admin@admin.com";
-        String password = faker.color().name() + faker.cat().name() + faker.number().digit();
-
-        getEmailInputField().sendKeys(email);
-        getPasswordInputField().sendKeys(password);
-    }
-
-    public void validAdminLogin(){
+    public void validAdminLogin() {
         String email = "admin@admin.com";
         String password = "12345";
 

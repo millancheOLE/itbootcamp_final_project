@@ -5,10 +5,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LocaleTest extends BaseTest{
+public class LocaleTest extends BaseTest {
 
+    /*
+    On the homepage, user changes the language to "ES". Verify that the website language changes to spanish and
+    that header text displays text "Página de aterrizaje".
+     */
     @Test
-    public void verifySetLanguageToES(){
+    public void verifySetLanguageToES() {
         String expectedResult = "Página de aterrizaje";
 
         homepagePage.getLanguageButton().click();
@@ -22,8 +26,12 @@ public class LocaleTest extends BaseTest{
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    /*
+    On the homepage, user changes the language to "EN". Verify that the website language changes to english and
+    that header text displays text "Landing".
+     */
     @Test
-    public void verifySetLanguageToEN(){
+    public void verifySetLanguageToEN() {
         String expectedResult = "Landing";
 
         homepagePage.getLanguageButton().click();
@@ -37,8 +45,12 @@ public class LocaleTest extends BaseTest{
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    /*
+    On the homepage, user changes the language to "FR". Verify that the website language changes to french and
+    that header text displays text "Page d'atterrissage".
+     */
     @Test
-    public void verifySetLanguageToFR(){
+    public void verifySetLanguageToFR() {
         String expectedResult = "Page d'atterrissage";
 
         homepagePage.getLanguageButton().click();

@@ -1,13 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MyProfile extends BasePage{
+public class MyProfile extends BasePage {
 
     private By emailField = By.id("email");
     private By nameField = By.id("name");
@@ -52,14 +50,5 @@ public class MyProfile extends BasePage{
 
     public WebElement getSaveButton() {
         return getDriver().findElement(saveButton);
-    }
-
-    public void fillMyProfileFormFaker(){
-        getWebDriverWait().until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[2]/span/form/div/div/div[7]/span/div/div/div[1]/div/label"), "GitHub"));
-        getPhoneField().sendKeys(381 + faker.number().digits(9));
-        getCityField().sendKeys("Chicago" + Keys.ENTER);
-        getCountryField().sendKeys(faker.address().country());
-        getTwitterField().sendKeys("https://twitter.com/" + faker.name().firstName().toLowerCase());
-        getGitHubField().sendKeys("https://github.com/" + faker.name().firstName().toLowerCase());
     }
 }
